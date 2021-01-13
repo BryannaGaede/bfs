@@ -1,5 +1,5 @@
 # Breadth First Search in Python
-## Mine-Finder
+## Labrynth Solver
 <br>
 
 ### Problem:
@@ -23,4 +23,4 @@ O O O O O <br>
 ### Solution:
 
 The solution to this problem is written in Python and used breadth first search. <br>
-2-3 command line arguments are used, input file, output file and optional 1 for debugging messages to print.
+2-3 command line arguments are used, input file, output file and optional 1 for debugging messages to print. The holes are added to a queue, each adjacent square is checked for validity and if the value is adjusted that point is added to the queue to be checked again. Multiple inputs were used to check if code caught unusual cases. 
