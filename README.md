@@ -1,5 +1,6 @@
 # Breadth First Search in Python
 ## Labrynth Solver
+#### Author: Bryanna Gaede
 <br>
 
 ### Problem:
