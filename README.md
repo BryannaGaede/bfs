@@ -14,10 +14,10 @@ O O O O O <br>
 
 #### The resulting output would be as follows:
 
-4 - 2 3 4 <br>
-3 - 1 - - <br>
+4 -1 2 3 4 <br>
+3 -1 1 -1 -1 <br>
 2 1 0 1 1 <br>
-3 2 - - 0 <br>
+3 2 -1 -1 0 <br>
 4 3 3 2 1 <br>
 
 ### Solution:
