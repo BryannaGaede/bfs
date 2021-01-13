@@ -19,6 +19,7 @@ def printd(args):
 #handle input file
 fileHandler = open(INPUT_FILE)
 lines = fileHandler.readlines()
+fileHandler.close()
 
 #store input file contents in 2D array
 grid = []
@@ -93,8 +94,9 @@ def ck_adj(row,col):
     for i in range(4):
         ck_row = row + row_adjust[i]
         ck_col = col + col_adjust[i]
-        if ck_row >= 0 and ck_col >= 0 and ck_row < LAST_ROW+1 and ck_col < LAST_COLUMN+1 and grid[ck_row][ck_col] == 'O':
-            printd([ck_row, ck_col, " in range\n"])
+        if ck_row >= 0 and ck_col >= 0 and ck_row < LAST_ROW+1 and ck_col < LAST_COLUMN+1 and grid[ck_row][ck_col] == 'O' and (dis_grid[ck_row][ck_col] < 0 or dis_grid[ck_row][ck_col] > dis_grid[row][col]+1):
+            dis_grid[ck_row][ck_col] = dis_grid[row][col] + 1
+            q.append([ck_row,ck_col])
             
 
 #add to adjacent squares acordingly when not walls and keep going until queue is empty
@@ -108,3 +110,12 @@ for line in dis_grid:
     for element in line:
         printd([element, " "])
     printd("\n")
+
+#write results to file
+fileHandler = open(OUTPUT_FILE, 'w')
+for row in dis_grid:
+    for col in range(LAST_COLUMN):
+        fileHandler.write(str(row[col]))
+        if col != LAST_COLUMN:
+            fileHandler.write(" ")
+    fileHandler.write("\n")
